@@ -87,8 +87,8 @@ jobs:
         id: check-installation-and-tests
         run: |
           failed=0
-          echo '[COMMAND] mkdir "npm-package" && cd "npm-package"'
-          mkdir "npm-package" && cd "npm-package"
+          echo '[COMMAND] cd .. && mkdir "npm-package" && cd "npm-package"'
+          cd .. && mkdir "npm-package" && cd "npm-package"
           echo '[COMMAND] npm init --yes'
           npm init --yes
           echo '[COMMAND] npm install ${{ needs.parse-issue-form-body.outputs.npm-package }}'
