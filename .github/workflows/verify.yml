@@ -77,14 +77,8 @@ jobs:
       - name: Check NPM package metadata
         id: check-npm-package-metadata
         run: |
-          failed=0
-          npm install @adobe/aio-lib-template-validation || failed=1
-          if [ ${failed} -eq 1 ]; then echo "::set-output name=error:::x: Failed installing @adobe/aio-lib-template-validation"; exit 1; fi;
-          npx tv run-checks ${{ needs.parse-issue-form-body.outputs.npm-link }} 2>&1 > output.log || failed=1
-          cat output.log
-          output=$(cat output.log)
-          output="test\n1234\n5678"
-          if [ ${failed} -eq 1 ]; then echo "::set-output name=error:::x: ${output}"; exit 1; fi;
+          node src/validate-npm-package-metadata.js
+          exit 1
   check-npm-package:
     name: Validate template
     runs-on: ubuntu-latest

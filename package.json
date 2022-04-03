@@ -1,0 +1,23 @@
+{
+  "name": "playground-github-actions",
+  "version": "1.0.0",
+  "description": "Run validation checks on NPM packages that are App Builder templates",
+  "type": "module",
+  "scripts": {
+    "lint:check": "eslint --ext .js .",
+    "lint:fix": "eslint --ext .js --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slitviachenko/playground-github-actions.git"
+  },
+  "author": "Serhii Litviachenko",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/slitviachenko/playground-github-actions/issues"
+  },
+  "homepage": "https://github.com/slitviachenko/playground-github-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0"
+  }
+}
