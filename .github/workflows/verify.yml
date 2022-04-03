@@ -74,6 +74,12 @@ jobs:
     outputs:
       error: ${{ steps.check-npm-package-metadata.outputs.error }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
       - name: Check NPM package metadata
         id: check-npm-package-metadata
         run: |
