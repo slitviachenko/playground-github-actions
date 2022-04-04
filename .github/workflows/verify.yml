@@ -84,9 +84,7 @@ jobs:
         run: npm install
       - name: Check NPM package metadata
         id: check-npm-package-metadata
-        run: |
-          node src/validate-npm-package-metadata.js
-          exit 1
+        run: node src/check-npm-package-metadata.js ${{ needs.parse-issue-form-body.outputs.npm-package }}
   check-npm-package:
     name: Validate template
     runs-on: ubuntu-latest
