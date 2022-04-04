@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as metadata from '@adobe/aio-lib-template-validation';
 
-async function check() {
+(async () => {
   const myArgs = process.argv.slice(2);
   const packageName = myArgs[0];
   try {
@@ -20,6 +20,4 @@ async function check() {
     core.setOutput('error', `${errorMessage}`);
     throw new Error(errorMessage);
   }
-}
-
-await check();
+})();
